@@ -52,28 +52,19 @@ st.markdown('<p class="gradient-text">Traditional Converter</p>', unsafe_allow_h
 category = st.selectbox("Select Category", list(UNIT_CATEGORIES.keys()), key='cat_select')
 
 # Conversion row with aligned elements
-conv_col1, conv_col2, conv_col3, conv_col4 = st.columns([3, 1, 3, 2])
+conv_col1, conv_col2, conv_col3 = st.columns([3, 1, 3])
 
 with conv_col1:
     from_unit = st.selectbox("From", UNIT_CATEGORIES[category], key='from_select')
 
 with conv_col2:
-    st.markdown("<br>", unsafe_allow_html=True)  
-    swap = st.button("🔄 Swap", key='swap_btn')
-
-with conv_col3:
     to_unit = st.selectbox("To", UNIT_CATEGORIES[category], key='to_select')
 
-with conv_col4:
+with conv_col3:
     value = st.number_input("Enter Value", 
                           min_value=0.0, 
                           value=1.0,
                           key='value_input')
-
-# Handle swap
-if swap:
-    from_unit, to_unit = to_unit, from_unit
-    st.rerun()
 
 # Perform conversion (keep this part the same)
 try:
