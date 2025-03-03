@@ -95,7 +95,7 @@ if st.button("✨ Convert with AI"):
     
     try:
         model = genai.GenerativeModel('gemini-2.0-flash')
-        with st.spinner("🧠 Processing your request with Gemini..."):
+        with st.spinner("🧠 Processing your request with Google Gemini..."):
             response = model.generate_content(
                 f"""Convert this unit with detailed explanation: {user_input}
                 Use this format:
