@@ -24,5 +24,13 @@ The **Smart Unit Converter** is a web-based application built with **Python & St
 git clone https://github.com/Mutahir-15/UNIT-CONVERTER-WITH-LLM-INTEGRATION.git<br>
 cd smart-unit-converter
 
+### 2️⃣ Install Dependencies
+
+pip install -r requirements.txt
+
+### 3️⃣ Run the Application
+
+streamlit run app.py
+
 ## Live Web App
 [Smart Unit Converter - Gemini 2.0 Flash](https://unit-converter-llm.streamlit.app/)
