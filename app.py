@@ -5,10 +5,6 @@ import os
 import google.generativeai as genai
 from pint import UnitRegistry
 
-import streamlit as st
-
-st.write("API Key:", st.secrets["GEMINI_API_KEY"])
-
 # Setting Environment Variable
 load_dotenv()
 gemini_api_key = os.getenv("GEMINI_API_KEY")
