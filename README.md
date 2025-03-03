@@ -21,6 +21,9 @@ The **Smart Unit Converter** is a web-based application built with **Python & St
 ## 🚀 How to Run Locally
 
 ### 1️⃣ Clone the Repository
-```bash
+
 git clone https://github.com/your-username/smart-unit-converter.git
 cd smart-unit-converter
+
+## Live Web App
+[Smart Unit Converter - Gemini 2.0 Flash](https://unit-converter-llm.streamlit.app/)
