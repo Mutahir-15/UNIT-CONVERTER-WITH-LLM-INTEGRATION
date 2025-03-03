@@ -22,7 +22,7 @@ The **Smart Unit Converter** is a web-based application built with **Python & St
 
 ### 1️⃣ Clone the Repository
 
-git clone https://github.com/your-username/smart-unit-converter.git
+git clone https://github.com/Mutahir-15/UNIT-CONVERTER-WITH-LLM-INTEGRATION.git
 cd smart-unit-converter
 
 ## Live Web App
