@@ -32,5 +32,5 @@ pip install -r requirements.txt
 
 streamlit run app.py
 
-## Live Web App
-[Smart Unit Converter - Gemini 2.0 Flash](https://unit-converter-llm.streamlit.app/)
+## 🔗 Live Web App
+**🌍 Try it out here:** [Smart Unit Converter - Gemini 2.0 Flash](https://unit-converter-llm.streamlit.app/)
