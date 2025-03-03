@@ -15,8 +15,7 @@ The **Smart Unit Converter** is a web-based application built with **Python & St
 ## 🛠️ Tech Stack
 - 🐍 **Python** - Core logic & API handling  
 - 🎨 **Streamlit** - Frontend & user interface  
-- 🤖 **Google Gemini 2.0 Flash** - AI-powered processing  
-- 🚀 **OpenAI/DeepSeek AI (Optional)** - Future integrations  
+- 🤖 **Google Gemini 2.0 Flash** - AI-powered processing    
 
 ## 🚀 How to Run Locally
 
