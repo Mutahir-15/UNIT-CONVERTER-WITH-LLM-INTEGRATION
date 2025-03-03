@@ -84,7 +84,6 @@ except:
     st.error("⚠️ Conversion not supported between selected units")
 
 # AI Converter Section
-# AI Converter Section
 st.markdown("---")
 st.markdown('<p class="gradient-text">AI-Powered Converter (Gemini 2.0 Flash)</p>', unsafe_allow_html=True)
 user_input = st.text_input("Ask natural language conversion (e.g., 'Convert 5 feet 2 inches to meters'):")
