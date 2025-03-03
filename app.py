@@ -5,6 +5,10 @@ import os
 import google.generativeai as genai
 from pint import UnitRegistry
 
+import streamlit as st
+
+st.write("API Key:", st.secrets["GEMINI_API_KEY"])
+
 # Setting Environment Variable
 load_dotenv()
 gemini_api_key = os.getenv("GEMINI_API_KEY")
@@ -96,7 +100,14 @@ if st.button("✨ Convert with AI"):
     try:
         model = genai.GenerativeModel('gemini-2.0-flash')
         with st.spinner("🧠 Processing your request with Google Gemini..."):
-            response = model.generate_content("Hello World")
+            response = model.generate_content(
+                f"""Convert this unit with detailed explanation: {user_input}
+                Use this format:
+                **Conversion Result**
+                [value] [from unit] = [converted value] [to unit]
+                **Explanation**
+                [brief explanation in simple terms]"""
+            )
             
         if response.text:
             with st.expander("🔍 See Detailed Conversion", expanded=True):
