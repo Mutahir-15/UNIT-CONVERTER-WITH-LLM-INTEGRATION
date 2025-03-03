@@ -58,7 +58,7 @@ with conv_col1:
     from_unit = st.selectbox("From", UNIT_CATEGORIES[category], key='from_select')
 
 with conv_col2:
-    st.markdown("<br>", unsafe_allow_html=True)  # Vertical alignment
+    st.markdown("<br>", unsafe_allow_html=True)  
     swap = st.button("🔄 Swap", key='swap_btn')
 
 with conv_col3:
@@ -73,7 +73,7 @@ with conv_col4:
 # Handle swap
 if swap:
     from_unit, to_unit = to_unit, from_unit
-    st.rerun()  # Changed to standard rerun()
+    st.rerun()
 
 # Perform conversion (keep this part the same)
 try:
@@ -82,25 +82,38 @@ try:
     st.success(f"✅ {value} {from_unit} = {result:.4f} {to_unit}")
 except:
     st.error("⚠️ Conversion not supported between selected units")
+
+# AI Converter Section
 # AI Converter Section
 st.markdown("---")
 st.markdown('<p class="gradient-text">AI-Powered Converter (Gemini 2.0 Flash)</p>', unsafe_allow_html=True)
 user_input = st.text_input("Ask natural language conversion (e.g., 'Convert 5 feet 2 inches to meters'):")
 
 if st.button("✨ Convert with AI"):
-    model = genai.GenerativeModel('gemini-2.0-flash')
-    response = model.generate_content(f"""  
-    Convert this unit with detailed explanation: {user_input}
-    Use this format:
-    [value] [from unit] = [converted value] [to unit]
-    Explanation: [brief explanation]
-    """)
+    if not user_input.strip():
+        st.warning("Please enter a conversion query")
+        st.stop()
     
-    with st.expander("🔍 See Detailed Conversion", expanded=True):
-        st.markdown(f"**Result:**\n{response.text}")
-        st.markdown("---")
-        st.markdown("**Conversion Steps:**")
-        st.write(response.text)
+    try:
+        model = genai.GenerativeModel('gemini-2.0-flash')
+        with st.spinner("🧠 Processing your request with Gemini..."):
+            response = model.generate_content(
+                f"""Convert this unit with detailed explanation: {user_input}
+                Use this format:
+                **Conversion Result**
+                [value] [from unit] = [converted value] [to unit]
+                **Explanation**
+                [brief explanation in simple terms]"""
+            )
+            
+        if response.text:
+            with st.expander("🔍 See Detailed Conversion", expanded=True):
+                st.markdown(response.text)
+        else:
+            st.error("No response from Gemini API")
+            
+    except Exception as e:
+        st.error(f"Error in conversion: {str(e)}")
 
 # Conversion History
 st.markdown("---")
