@@ -1,4 +1,4 @@
-# 🌟 Smart Unit Converter - Powered by Gemini 2.0 Flash
+# 🌟 Unit Converter - Powered by Gemini 2.0 Flash 🌟
 
 🚀 **An AI-powered Unit Converter leveraging Google Gemini 2.0 Flash for precise and efficient conversions!**  
 
